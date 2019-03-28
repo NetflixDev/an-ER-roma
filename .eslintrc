@@ -1,0 +1,27 @@
+{
+  "extends": [
+    "prettier"
+  ],
+  "plugins": [
+    "prettier"
+  ],
+  "env": {
+    "commonjs": true,
+    "es6": true,
+    "mocha": true,
+    "node": true
+  },
+  "rules": {
+    "indent": 0,
+    "max-len": 0,
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "tabWidth": 2,
+        "trailingComma": "none",
+        "printWidth": 130
+      }
+    ]
+  }
+}

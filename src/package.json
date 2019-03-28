@@ -1,0 +1,15 @@
+{
+	"name": "@netflixadseng/an-ER-fade-in",
+	"version": "1.0.0",
+	"description": "Netflix Animation: Endframe Fade-in",
+	"main": "creative.js",
+	"scripts": {
+		"pub": "np",
+		"version": "cd ../../ && npm run syncVersion"
+	},
+	"author": "Netflix",
+	"license": "ISC",
+	"devDependencies": {
+		"np": "^2.18.3"
+	}
+}
