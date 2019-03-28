@@ -1,7 +1,7 @@
 {
-  "name": "@netflixadseng/an-ER-roma",
+  "name": "@netflixadseng/an-ER-black-iris",
   "version": "5.0.0",
-  "description": "Netflix Animation: Roma",
+  "description": "Netflix Animation: Black Iris",
   "scripts": {
     "init": "node lib/api.js --cmd install",
     "localhost": "sh lib/confirm_env.sh 'http-server ./ -p 8000'",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/NetflixDev/an-ER-roma.git"
+    "url": "https://github.com/NetflixDev/an-ER-black-iris.git"
   },
   "main": "./src/main.js",
   "devDependencies": {
@@ -48,14 +48,14 @@
     "compatibility": [
       "f1250f57-b03c-4651-8c79-2659145bf385"
     ],
-    "name": "an-ER-roma",
+    "name": "an-ER-black-iris",
     "description": "Black iris wipe into keyart scaling in and other endframe elements fading in",
     "type": "animations",
     "context": "Default",
     "state": "published",
-    "updated": 1553801612291,
-    "full_name": "NetflixDev/an-ER-roma",
-    "html_url": "https://github.com/NetflixDev/an-ER-roma",
+    "updated": 1553815338204,
+    "full_name": "NetflixDev/an-ER-black-iris",
+    "html_url": "https://github.com/NetflixDev/an-ER-black-iris",
     "username": "GitHub",
     "version": "5.0.0",
     "minimum": "3.0.0"
