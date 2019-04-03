@@ -50,4 +50,5 @@ var Creative = function() {
 
 // percentage of iris animation that has to elapse before content underneath is completely visible
 Creative.irisOffscreenAnimPercent = 0.3;
+Creative.usesCanvasIris = true;
 Creative.irisColor = 'black';
