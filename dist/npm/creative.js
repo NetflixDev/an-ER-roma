@@ -18,7 +18,7 @@ var Creative = function() {
     var irisLen = Math.max(adParams.adWidth, adParams.adHeight);
     View.endFrame.iris.tween.to(View.endFrame.iris.circle, irisTime, {
       delay: irisDelay,
-      scale: 15,
+      scale: irisLen * 0.05,
       ease: Power2.easeOut
     });
     View.endFrame.iris.tween.start();
