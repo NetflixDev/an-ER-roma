@@ -45,19 +45,22 @@
   "license": "ISC",
   "genericSource": {
     "id": "e36bb5b4-a228-4ad2-8f04-9781fde295d5",
-    "compatibility": [
-      "8c417243-849b-4868-8eb9-91063e2f3d80",
-      "d0060a26-25ca-433c-b809-c02c32ecf097",
-      "7831f2b6-f096-43c6-b1bf-df71effa29e7",
-      "0367c5ab-f303-4457-9646-6eff86644817",
-      "487902e1-b384-4a1c-b29a-af052a0fd9a4"
-    ],
     "name": "an-ER-black-iris",
     "description": "Black iris wipe into keyart scaling in and other endframe elements fading in",
     "type": "animations",
+    "builder": {
+      "label": "Black Iris",
+      "compatibility": [
+        "8c417243-849b-4868-8eb9-91063e2f3d80",
+        "d0060a26-25ca-433c-b809-c02c32ecf097",
+        "7831f2b6-f096-43c6-b1bf-df71effa29e7",
+        "0367c5ab-f303-4457-9646-6eff86644817",
+        "487902e1-b384-4a1c-b29a-af052a0fd9a4"
+      ]
+    },
     "context": "Default",
     "state": "published",
-    "updated": 1554921961314,
+    "updated": 1556152742001,
     "full_name": "NetflixDev/an-ER-black-iris",
     "html_url": "https://github.com/NetflixDev/an-ER-black-iris",
     "username": "GitHub",

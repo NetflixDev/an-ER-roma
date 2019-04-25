@@ -5,7 +5,9 @@
   "version": "1.0.0",
   "description": "Not intended for GWD, just satisfying rigid API requirements",
   "files": {
-    "js": ["e36bb5b4-a228-4ad2-8f04-9781fde295d5.js"]
+    "js": [
+      "e36bb5b4-a228-4ad2-8f04-9781fde295d5.js"
+    ]
   },
   "externalScripts": [],
   "attributes": [],
