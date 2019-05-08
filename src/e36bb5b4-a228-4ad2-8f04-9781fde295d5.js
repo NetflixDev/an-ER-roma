@@ -6,7 +6,7 @@ if (typeof module === 'undefined') {
 module.exports = {
 	"id": "e36bb5b4-a228-4ad2-8f04-9781fde295d5",
 	"name": "an-ER-black-iris",
-	"description": "Black iris wipe into keyart scaling in and other endframe elements fading in",
+	"description": "Black iris wipe into background scaling in and other endframe elements fading in",
 	"type": "animations",
 	"context": "Default",
 	"state": "published",

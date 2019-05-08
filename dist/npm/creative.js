@@ -23,8 +23,8 @@ var Creative = function() {
     });
     View.endFrame.iris.tween.start();
 
-    // Scale down keyart with iris wipe
-    TweenLite.from(View.endFrame.keyart, irisTime, {
+    // Scale down background with iris wipe
+    TweenLite.from(View.endFrame.background, irisTime, {
       delay: irisDelay,
       scale: 2,
       opacity: 0,
