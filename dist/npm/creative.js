@@ -52,3 +52,9 @@ var Creative = function() {
 Creative.irisOffscreenAnimPercent = 0.3;
 Creative.usesCanvasIris = true;
 Creative.irisColor = 'black';
+
+// how long zoom animates for (in seconds)
+Creative.zoomDuration = 1.7;
+
+// how much to scale the starting frame (in seconds)
+Creative.zoomFactor = 5;
