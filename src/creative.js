@@ -60,4 +60,4 @@ Creative.irisColor = 'black';
 Creative.zoomDuration = 1.7;
 
 // how much to scale the keyart intro frame
-Creative.zoomAmount = 10;
+Creative.zoomAmount = 5;
