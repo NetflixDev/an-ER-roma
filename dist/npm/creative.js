@@ -36,7 +36,10 @@ var Creative = function() {
     var endFrameFadeInDelay = ttDelay + 0.5;
     var endFrameTime = 0.8;
 
-    TweenLite.from([View.endFrame.tt, View.endFrame.pedigree], endFrameTime, { alpha: 0, delay: ttDelay });
+    TweenLite.from([View.endFrame.tt, View.endFrame.pedigree], endFrameTime, {
+      alpha: 0,
+      delay: ttDelay
+    });
 
     TweenLite.delayedCall(endFrameFadeInDelay, function() {
       View.endFrame.netflixLogo.play();
@@ -56,5 +59,5 @@ Creative.irisColor = 'black';
 // how long zoom animates for (in seconds)
 Creative.zoomDuration = 1.7;
 
-// how much to scale the starting frame (in seconds)
-Creative.zoomFactor = 5;
+// how much to scale the keyart intro frame
+Creative.zoomAmount = 10;
