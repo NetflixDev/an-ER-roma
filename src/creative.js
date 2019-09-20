@@ -3,6 +3,12 @@
  * See here for more details: https://github.com/ff0000-ad-tech/ad-canvas
  */
 var Creative = function() {
+  // percentage of iris animation that has to elapse before content underneath is completely visible
+  var irisOffscreenAnimPercent = 0.3;
+
+  // indicates whether to use canvas-rendered iris
+  this.usesCanvasIris = true;
+
   this.play = function() {
     console.log('Creative.play()');
 
@@ -13,10 +19,10 @@ var Creative = function() {
     TweenLite.set(View.endFrame.cta, { alpha: 0 });
 
     // Iris animation
-    var irisDelay = 0.5;
-    var irisTime = 2;
+    var irisDelay = Creative.irisDelay;
+    var irisDuration = Creative.irisDuration;
     var irisLen = Math.max(adParams.adWidth, adParams.adHeight);
-    View.endFrame.iris.tween.to(View.endFrame.iris.circle, irisTime, {
+    View.endFrame.iris.tween.to(View.endFrame.iris.circle, irisDuration, {
       delay: irisDelay,
       scale: irisLen * 0.05,
       ease: Power2.easeOut
@@ -24,7 +30,7 @@ var Creative = function() {
     View.endFrame.iris.tween.start();
 
     // Scale down background with iris wipe
-    TweenLite.from(View.endFrame.background, irisTime, {
+    TweenLite.from(View.endFrame.background, irisDuration, {
       delay: irisDelay,
       scale: 2,
       opacity: 0,
@@ -32,7 +38,7 @@ var Creative = function() {
     });
 
     // Bring in rest of endframe elements
-    var ttDelay = 0.5 + irisDelay + Creative.irisOffscreenAnimPercent * irisTime;
+    var ttDelay = 0.5 + irisDelay + irisOffscreenAnimPercent * irisDuration;
     var endFrameFadeInDelay = ttDelay + 0.5;
     var endFrameTime = 0.8;
 
@@ -51,9 +57,13 @@ var Creative = function() {
   };
 };
 
-// percentage of iris animation that has to elapse before content underneath is completely visible
-Creative.irisOffscreenAnimPercent = 0.3;
-Creative.usesCanvasIris = true;
+// time to delay start of iris animation (in seconds)
+Creative.irisDelay = 0.5;
+
+// how long iris expansion lasts
+Creative.irisDuration = 2;
+
+// color of iris screen
 Creative.irisColor = 'black';
 
 // how long zoom animates for (in seconds)
