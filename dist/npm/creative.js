@@ -13,8 +13,7 @@ var Creative = function() {
     console.log('Creative.play()');
 
     // Initialize animation
-    TweenLite.set(View.endFrame.tuneIn, { alpha: 0 });
-    TweenLite.set(View.endFrame.ftm, { alpha: 0 });
+    TweenLite.set(View.endFrame.headline, { alpha: 0 });
     TweenLite.set(View.endFrame.netflixLogo, { alpha: 0 });
     TweenLite.set(View.endFrame.cta, { alpha: 0 });
 
@@ -49,8 +48,7 @@ var Creative = function() {
 
     TweenLite.delayedCall(endFrameFadeInDelay, function() {
       View.endFrame.netflixLogo.play();
-      TweenLite.to(View.endFrame.tuneIn, endFrameTime, { alpha: 1 });
-      TweenLite.to(View.endFrame.ftm, endFrameTime, { alpha: 1 });
+      TweenLite.to(View.endFrame.headline, endFrameTime, { alpha: 1 });
       TweenLite.to(View.endFrame.netflixLogo, endFrameTime, { alpha: 1 });
       TweenLite.to(View.endFrame.cta, endFrameTime, { alpha: 1 });
     });
