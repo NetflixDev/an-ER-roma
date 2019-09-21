@@ -1,3 +1,21 @@
+// time to delay start of iris animation (in seconds)
+var irisDelay = 0.5;
+
+// how long iris expansion lasts
+var irisDuration = 2;
+
+// color of iris screen
+var irisColor = 'black';
+
+// how long it takes for endframe elements to fade in (in seconds)
+var fadeDuration = 0.8;
+
+// how long zoom animates for (in seconds)
+var zoomDuration = 1.7;
+
+// how much to scale the keyart intro frame
+var zoomAmount = 5;
+
 /**
  * This animation preset uses ff0000-ad-tech/ad-canvas package to animate canvas-rendered elements
  * See here for more details: https://github.com/ff0000-ad-tech/ad-canvas
@@ -16,8 +34,6 @@ var Creative = function() {
     TweenLite.set(View.endFrame.cta, { alpha: 0 });
 
     // Iris animation
-    var irisDelay = Creative.irisDelay;
-    var irisDuration = Creative.irisDuration;
     var irisLen = Math.max(adParams.adWidth, adParams.adHeight);
     View.endFrame.iris.tween.to(View.endFrame.iris.circle, irisDuration, {
       delay: irisDelay,
@@ -37,40 +53,27 @@ var Creative = function() {
     // Bring in rest of endframe elements
     var ttDelay = 0.5 + irisDelay + irisOffscreenAnimPercent * irisDuration;
     var endFrameFadeInDelay = ttDelay + 0.5;
-    var endFrameTime = Creative.fadeDuration;
 
-    TweenLite.from([View.endFrame.tt, View.endFrame.pedigree], endFrameTime, {
+    TweenLite.from([View.endFrame.tt, View.endFrame.pedigree], fadeDuration, {
       alpha: 0,
       delay: ttDelay
     });
 
     TweenLite.delayedCall(endFrameFadeInDelay, function() {
       View.endFrame.netflixLogo.play();
-      TweenLite.to(View.endFrame.tuneIn, endFrameTime, { alpha: 1 });
-      TweenLite.to(View.endFrame.ftm, endFrameTime, { alpha: 1 });
-      TweenLite.to(View.endFrame.netflixLogo, endFrameTime, { alpha: 1 });
-      TweenLite.to(View.endFrame.cta, endFrameTime, { alpha: 1 });
+      TweenLite.to(View.endFrame.tuneIn, fadeDuration, { alpha: 1 });
+      TweenLite.to(View.endFrame.ftm, fadeDuration, { alpha: 1 });
+      TweenLite.to(View.endFrame.netflixLogo, fadeDuration, { alpha: 1 });
+      TweenLite.to(View.endFrame.cta, fadeDuration, { alpha: 1 });
     });
   };
 };
 
-// time to delay start of iris animation (in seconds)
-Creative.irisDelay = 0.5;
-
-// how long iris expansion lasts
-Creative.irisDuration = 2;
-
-// color of iris screen
-Creative.irisColor = 'black';
-
-// how long it takes for endframe elements to fade in (in seconds)
-Creative.fadeDuration = 0.8;
-
-// how long zoom animates for (in seconds)
-Creative.zoomDuration = 1.7;
-
-// how much to scale the keyart intro frame
-Creative.zoomAmount = 5;
-
 // indicates whether to use canvas-rendered iris
 Creative.usesCanvasIris = true;
+
+// attaching to Creative class since container looks there for intro zoom properties
+Creative.zoomDuration = zoomDuration;
+Creative.zoomAmount = zoomAmount;
+// also for iris color
+Creative.irisColor = irisColor;
