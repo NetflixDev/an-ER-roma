@@ -1,20 +1,20 @@
 // time to delay start of iris animation (in seconds)
-var irisDelay = 0.5;
+var IRIS_DELAY = 0.5;
 
 // how long iris expansion lasts
-var irisDuration = 2;
+var IRIS_DURATION = 2;
 
 // color of iris screen
-var irisColor = 'black';
+var IRIS_COLOR = 'black';
 
 // how long it takes for endframe elements to fade in (in seconds)
 var fadeDuration = 0.8;
 
 // how long zoom animates for (in seconds)
-var zoomDuration = 1.7;
+var ZOOM_DURATION = 1.7;
 
 // how much to scale the keyart intro frame
-var zoomAmount = 5;
+var ZOOM_AMOUNT = 5;
 
 /**
  * This animation preset uses ff0000-ad-tech/ad-canvas package to animate canvas-rendered elements
@@ -35,23 +35,23 @@ var Creative = function() {
 
     // Iris animation
     var irisLen = Math.max(adParams.adWidth, adParams.adHeight);
-    View.endFrame.iris.tween.to(View.endFrame.iris.circle, irisDuration, {
-      delay: irisDelay,
+    View.endFrame.iris.tween.to(View.endFrame.iris.circle, IRIS_DURATION, {
+      delay: IRIS_DELAY,
       scale: irisLen * 0.05,
       ease: Power2.easeOut
     });
     View.endFrame.iris.tween.start();
 
     // Scale down background with iris wipe
-    TweenLite.from(View.endFrame.background, irisDuration, {
-      delay: irisDelay,
+    TweenLite.from(View.endFrame.background, IRIS_DURATION, {
+      delay: IRIS_DELAY,
       scale: 2,
       opacity: 0,
       ease: Power2.easeOut
     });
 
     // Bring in rest of endframe elements
-    var ttDelay = 0.5 + irisDelay + irisOffscreenAnimPercent * irisDuration;
+    var ttDelay = 0.5 + IRIS_DELAY + irisOffscreenAnimPercent * IRIS_DURATION;
     var endFrameFadeInDelay = ttDelay + 0.5;
 
     TweenLite.from([View.endFrame.tt, View.endFrame.pedigree], fadeDuration, {
@@ -73,7 +73,7 @@ var Creative = function() {
 Creative.usesCanvasIris = true;
 
 // attaching to Creative class since container looks there for intro zoom properties
-Creative.zoomDuration = zoomDuration;
-Creative.zoomAmount = zoomAmount;
+Creative.zoomDuration = ZOOM_DURATION;
+Creative.zoomAmount = ZOOM_AMOUNT;
 // also for iris color
-Creative.irisColor = irisColor;
+Creative.irisColor = IRIS_COLOR;
