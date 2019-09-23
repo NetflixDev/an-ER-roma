@@ -8,7 +8,7 @@ var IRIS_DURATION = 2;
 var IRIS_COLOR = 'black';
 
 // how long it takes for endframe elements to fade in (in seconds)
-var fadeDuration = 0.8;
+var FADE_DURATION = 0.8;
 
 // how long zoom animates for (in seconds)
 var ZOOM_DURATION = 1.7;
@@ -54,17 +54,17 @@ var Creative = function() {
     var ttDelay = 0.5 + IRIS_DELAY + irisOffscreenAnimPercent * IRIS_DURATION;
     var endFrameFadeInDelay = ttDelay + 0.5;
 
-    TweenLite.from([View.endFrame.tt, View.endFrame.pedigree], fadeDuration, {
+    TweenLite.from([View.endFrame.tt, View.endFrame.pedigree], FADE_DURATION, {
       alpha: 0,
       delay: ttDelay
     });
 
     TweenLite.delayedCall(endFrameFadeInDelay, function() {
       View.endFrame.netflixLogo.play();
-      TweenLite.to(View.endFrame.tuneIn, fadeDuration, { alpha: 1 });
-      TweenLite.to(View.endFrame.ftm, fadeDuration, { alpha: 1 });
-      TweenLite.to(View.endFrame.netflixLogo, fadeDuration, { alpha: 1 });
-      TweenLite.to(View.endFrame.cta, fadeDuration, { alpha: 1 });
+      TweenLite.to(View.endFrame.tuneIn, FADE_DURATION, { alpha: 1 });
+      TweenLite.to(View.endFrame.ftm, FADE_DURATION, { alpha: 1 });
+      TweenLite.to(View.endFrame.netflixLogo, FADE_DURATION, { alpha: 1 });
+      TweenLite.to(View.endFrame.cta, FADE_DURATION, { alpha: 1 });
     });
   };
 };
